@@ -13,6 +13,7 @@ let birdy=boardheight/2 ;
 let birdwidth= 34;
 let birdheight= 24;
 let birdimg;
+
 let bird={
     img: birdimg,
     x: birdx,
@@ -137,8 +138,14 @@ if(!pipe.passed && bird.x > pipe.x + pipe.width){ //if bird has passed the pipe,
         gameover=true;
     }
 
+    //score
+context.fillStyle= "black";
+context.font=("20px public pixels"); //font style
+context.fillText(score, 10, 20);
+
+
     if (gameover) {
-        context.font=("bold 30px public pixels");
+        context.font=("30px public pixels");
         context.fillText("GAME OVER", boardwidth/2-60 ,boardheight/2); //to display game over message
     }
     
