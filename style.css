@@ -1,0 +1,13 @@
+body{
+    text-align: center;
+}
+
+#board{
+    background-image: url(./flappybirdbg.png);
+    
+}
+
+@font-face {
+    font-family: 'public pixels';
+    src: url("ARCADECLASSIC.TTF") format('truetype');
+}
