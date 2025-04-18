@@ -4,6 +4,7 @@ let boardheight= 640;
 let boardwidth= 360;
 let context;
 let score=0;
+let highscore=0;
 
 
 
@@ -133,15 +134,29 @@ if(!pipe.passed && bird.x > pipe.x + pipe.width){ //if bird has passed the pipe,
     score+=0.5;
     pipe.passed= true; //to check if bird has passed the pipe
 }
+if(score > highscore){
+   highscore=score; 
+}
+    
 
     if( detectcollision(bird, pipe)){
         gameover=true;
     }
+}
 
     //score
 context.fillStyle= "black";
 context.font=("20px public pixels"); //font style
 context.fillText(score, 10, 20);
+
+
+//highscore
+    context.fillStyle= "black";
+    context.font=("20px public pixels"); //font style
+    context.fillText("highscore", 10, 35);
+    
+     context.fillText(highscore, 120, 35);
+
 
 
     if (gameover) {
@@ -150,7 +165,7 @@ context.fillText(score, 10, 20);
     }
     
   
-}
+
 
 }
 
